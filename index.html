@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Sync</title>
+  <link rel="stylesheet" href="{% static 'css/index1.css' %}">
+
+  <script>
+    
+    function updateUsername(username) {
+      const userSection = document.getElementById('user-section');
+      userSection.innerHTML = `<span>Welcome, ${username}</span>`;
+    }
+
+    
+    function simulateLogin() {
+      updateUsername('JohnDoe');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div >
+      <h2>STUDY SYNC</h2>
+    <!-- <img class="logo" src="{% static 'images/log2.jpeg'%}" alt="Study sync">  -->
+    </div>
+    <nav>
+    {% if user.is_authenticated %}
+
+    <li><a href="{% url 'profile' %}">{{user.username}}</a></li>
+    <li><a href="{% url 'logoutpage' %}">logout</a></li>
+
+    {% else %}
+      <a href="{% url 'signup' %}">Sign Up</a>
+      <a href="{% url 'login' %}">Login</a>
+      <div id="user-section"></div>
+    {% endif %} 
+    </nav>
+  </header>
+<form action="{% url 'search' %}" method="POST">
+    {% csrf_token %}
+<div class="nav-bar">
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search..." name="search">
+        <button type="submit" class="search-button" name='search'></button>
+    </div>
+</div>
+</form>
+
+  <section class="hero">
+    <h1>Connecting Tutors and Students Seamlessly</h1>
+    <p>Find the best tutors near you or start sharing your knowledge today. Your learning journey starts here!</p>
+    
+  </section>
+
+  <section class="nearby-tutors" id="tutors">
+    <h2>Nearby Tutors</h2>
+    <div class="tutor-cards">
+      <div class="tutor-card">
+        <h3>Dr.Dayaker</h3>
+        <p>Mathematics Expert</p>
+        <p>⭐⭐⭐⭐⭐ (4.9)</p>
+        <p>Location: Kukatpally</p>
+        <button onclick="location.href='tutor-details.html'">View Profile</button>
+      </div>
+      <div class="tutor-card">
+        <h3>Jay Prasad</h3>
+        <p>Science & Languages</p>
+        <p>⭐⭐⭐⭐ (4.8)</p>
+        <p>Location: Alwal</p>
+        <button onclick="location.href='tutor-details.html'">View Profile</button>
+      </div>
+      <div class="tutor-card">
+        <h3>Madhu</h3>
+        <p>Social</p>
+        <p>⭐⭐⭐⭐ (4.5)</p>
+        <p>Location: Kukatpally</p>
+        <button onclick="location.href='tutor-details.html'">View Profile</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Study sync. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </footer>
+</body>
+</html>

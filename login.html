@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      localStorage.setItem('username', username); 
+      window.location.href = 'index.html';
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div >
+      <h2>STUDY SYNC</h2>
+    <!-- <img class="logo" src="{% static 'images/log2.jpeg'%}" alt="Study sync">  -->
+    </div>
+    <nav>
+      Go back to <a href="{% url 'indexpage' %}">Home</a>
+      <div id="user-section"></div> 
+    </nav>
+  </header>
+
+  <section class="login-form">
+    <h2>Login</h2>
+    {% for i in messages %}
+    {{i}}
+    {% endfor %}
+    <form action="{% url 'usercheck' %}" method="POST">
+        {% csrf_token %}
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" pla
+      ceholder="Enter your password" required>
+      
+      <button type="submit">Login</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Study Sync. All rights reserved.</p>
+  </footer>
+</body>
+</html>

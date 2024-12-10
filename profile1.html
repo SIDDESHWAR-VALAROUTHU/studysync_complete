@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+</head>
+<body>
+    <div class="container animate__animated animate__fadeIn">
+    {% if data %}
+        {% for i in data %}
+        <h1>{{i.name}}</h1>
+<br>
+
+        </div>
+        {% if i.phone %}
+        <div class="profile-info">
+            <label>Phone</label>
+            <p>{{i.phone}}</p>
+        </div>
+        {% endif %}
+
+    
+        {% if i.email %}
+        <div class="profile-info">
+            <label>My Linkedin</label>
+
+            <p>{{i.email}}</p>
+        </div>
+        {% endif %}      
+
+        
+        <div class="buttons">
+            <pre>
+    <a href="#" name="edit"><button>Edit Profile</button></a>                                                       <a href="{% url 'indexpage' %}"><button class="footer-button">Home</button></a>
+            </pre>
+        </div>
+        {% endfor %}
+    {% endif %}
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!--     {% if skills %}
+                            <div class="profile-info">
+                                <label>Skills</label>
+                                {% for i in skills %}
+                                <ul><li>{{i}}</li></ul>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        --> 

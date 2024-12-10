@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    font-family: roboto;
+    border: border-box;
+}
+
+/* navbar */
+
+.navbar{
+    margin-left: 200px;
+    padding-right: 200px;
+    background-position: fixed;
+    height: 200px;
+    background-color:white;
+    color: #0f1111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.nav-clgname{
+    justify-content: center;
+    text-align: left;
+}
+.clg-first{
+    color: rgb(1, 1, 8);
+    font-size: 4rem;
+    margin-top: 15px;
+    margin-left: 40px;
+
+}
+
+.clg-second{
+    color:rgb(3, 0, 14) ;
+    font-size: 2.5rem;
+    margin-left: 100px;
+}
+
+/* panel */
+
+
+
+.panel ul{
+    display: flex;
+    width: 70%;
+    font-size: 1rem;
+    font-weight: 700;
+    
+}
+
+.panel a{
+    margin-left: 60px;
+    color: white;
+    text-decoration: none;
+}
+
+ul li{
+    list-style: none;
+}
+
+ul li a{
+    background-image: linear-gradient(
+        to bottom ,
+        transparent 0%,
+        transparent 90%,
+        white 90%,
+        white 100%
+    );
+
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position-x: right;
+
+    transition: background-size 300ms;
+}
+
+ul li a:hover{
+    background-size: 100% 100%;
+    background-position-x: left;
+}
+
+.panel{
+    height: 70px;
+    width: 98%;
+    margin-left: 10px;
+    background-color: #0d2a47;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 4px;
+   
+}
+
+
+       /* CSS for styling the search bar */
+       .search-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 4px;
+    }
+    .search-box {
+        position: relative;
+        width: 280px;
+        margin-left:-230px ;
+    }
+    .search-input {
+        width: 85%;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 20px;
+        outline: none;
+        font-size: 16px;
+    }
+    .search-input:focus {
+        border-color:#031528;
+    }
+    .search-button {
+        position: absolute;
+        top: 50%;
+        right: 25px;
+        transform: translateY(-50%);
+        padding: 6px 15px;
+        border: none;
+        background-color:#007bff ;
+        color: #fff;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .search-button:hover {
+        background-color: #0056b3;
+    }
+
+ /* .panel-ops a{
+    margin-left: 60px;
+    color: white;
+    text-decoration: none;
+} */
+
+ /* .panel-ops {
+    width: 70%;
+    font-size: 1rem;
+    font-weight: 700;
+   
+} */
+
+.panel-login-signup {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.panel-login-signup a{
+    margin-left: 15px;
+    color: white;
+    text-decoration: none;
+    padding-right: 4px;
+}
+
+
+/* clgimg */
+
+.clgimg{
+    background-image: url("bvc image.jpg");
+    background-size:cover;
+    height: 800px;
+    width: 98%;  
+    margin:10px 10px 4px 10px;
+   border-radius: 4px;
+
+}
+
+
+/* footer */
+
+.foot1{
+    margin-left: 10%;
+    height: 300px;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.foot1 img{
+    height: 120px;
+    width: 200px;
+    aspect-ratio: 3/2;
+    background-size: cover;
+    object-fit: contain;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+
+.foot2{
+    height: 250px;
+    width: 98%;
+    margin:1px 10px 1px 10px;
+    border-radius: 4px;
+    background-color: #0d2a47;
+    display: flex;
+    color: white;
+    justify-content:center;
+    align-items: center;
+    font-size: 1.15rem;
+}
+
+
+#logo{
+    background-image: url(url('static/images/college v.jpeg'););
+    background-size: cover;
+    height: 110px;
+    width: 110px;
+    background-color: aliceblue;
+    margin-right: 10px;
+    margin-bottom: 80px;
+    border-radius: 10px;
+}
+
+
+.foot-about{
+    height: 80px;
+    width: 60%;
+    padding-bottom: 60px;
+}
+
+#home{
+    /* background-color: aliceblue; */
+    width: 130%;
+    height: 60px;
+    margin-left: -190px;
+    font-size: 0.85rem;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; 
+
+    
+}
+
+

@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="{% static 'css/signup.css'  %}">
+</head>
+<body>
+  <header>
+    <div >
+      <h2>STUDY SYNC</h2>
+    <!-- <img class="logo" src="{% static 'images/log2.jpeg'%}" alt="Study sync">  -->
+    </div>
+    <nav>
+      <nav>
+        Go back to <a href="{% url 'indexpage' %}">Home</a>
+        <div id="user-section"></div> 
+      </nav>  
+    </nav>
+  </header>
+
+  <section class="signup-form">
+    <h2>Create an Account</h2>
+    <form action="{% url 'createuser' %}" method="POST">
+    {% csrf_token %}
+    {% for i in messages %}
+    {{i}}
+    {% endfor %}
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Create a password" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="repassword" name="repassword" placeholder="re-enter  password" required>
+      
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+      <label for="phone">I am a:</label>
+      <input type="text" id="role1" name="role1" placeholder="Enter tutor or student" required>
+      
+      <label for="role">I am a:</label>
+      <select id="role" name="role" required>
+        <option value="" disabled selected>Choose one</option>
+        <option value="student">Student</option>
+        <option value="tutor">Tutor</option>
+      </select>
+      
+      <button type="submit">Sign Up</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Find My Tutor. All rights reserved.</p>
+
+  </footer>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Search Results</h1>
+        
+        {% for i in data %}
+        <div class="search-result">
+            <a style="text-decoration: none;" href="#"><p><pre>{{i.username}}     {{i.email}}</pre>
+            </p></a>
+        </div>
+
+        {% endfor %}
+        
+    </div>
+    <script>
+        window.onload = function() {
+            window.scrollTo(0, 0);
+        };
+    </script>
+</body>
+</html>
+
+    
